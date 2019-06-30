@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.custom-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px #ccc;
+  width: 400px;
+  padding: 20px;
+  margin: 100px auto;
+}
+
+.no-bottom-radius {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.no-top-radius {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.modal-container {
+  position: fixed;
+  top: 10%;
+  left: 35%;
+  z-index: 5000;
+  background-color: white;
+  box-sizing: border-box;
+  transition: all 0.5s ease-out;
+}
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.add-box {
+  background-color: #f2f2f2;
+  padding: 10px;
+  height: auto;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px #ccc;
+  width: 200px;
+  transition: all 0.5s ease-in-out;
+}
+
+.add-box:hover {
+  cursor: pointer;
+}
+
+.add-box-child {
+  transition: all 0.5s ease-in-out;
+}
+
+.project-column {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px #ccc;
+  width: 220px;
+  margin: 10px;
+  padding: 10px;
+  float: left;
+}
+
+.task {
+  background-color: #e6f0ff;
+  padding: 10px;
+  height: auto;
+  border: 1px solid #cce0ff;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px #80b3ff;
+  width: 200px;
+}
+
+.drag {
+  cursor: move;
+}
+
+.hoverPointer:hover {
+  cursor: pointer;
+}
+
+
+
+

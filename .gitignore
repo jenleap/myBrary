@@ -1,0 +1,4 @@
+backend/node_modules
+backend/util/config.js
+
+frontend/node_modules
