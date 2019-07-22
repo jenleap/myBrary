@@ -4,9 +4,13 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     username: { type: String, unique: true, lowercase: true },
     password: String,
-    projects: [{
+    books: [{
         type: Schema.Types.ObjectId,
-        ref: 'project'
+        ref: 'book'
+    }],
+    lists: [{
+        type: Schema.Types.ObjectId,
+        ref: 'list'
     }]
 });
 

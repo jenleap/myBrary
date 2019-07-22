@@ -17,7 +17,7 @@ class Main extends Component {
                 {(!this.props.token) ? (
                     <Welcome />
                 ) : (
-                    <Dashboard />
+                    <Dashboard history={this.props.history} />
                 )}
             </div>
         )

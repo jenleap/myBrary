@@ -1,7 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './assets/css/index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -14,6 +13,9 @@ import Signup from './components/auth/Signup';
 import Signout from './components/auth/Signout';
 import Signin from './components/auth/Signin';
 import Main from './components/Main';
+import Search from './components/books/Search';
+import ListPage from './components/lists/ListPage';
+import Dashboard from './components/Dashboard';
 
 const store = createStore(
     reducers,
@@ -29,6 +31,9 @@ ReactDOM.render(
                 <Route path='/signup' component={ Signup } />
                 <Route path='/signout' component={ Signout } />
                 <Route path='/signin' component={ Signin } />
+                <Route path='/search' component={ Search } />
+                <Route path='/dashboard' component={ Dashboard } />
+                <Route path='/list/:listId' component={ ListPage } />
             </App>
         </BrowserRouter>
     </Provider>, 

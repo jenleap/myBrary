@@ -6,32 +6,24 @@ class Header extends Component {
     renderLinks() {
         if (this.props.authenticated) {
             return (
-                <div className="collapse navbar-collapse" id="navbarColor03">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <Link to="/dashboard">Dashboard</Link>
-                        </li>
-                    </ul>
-                    <Link to="/signout" className="btn btn-primary my-2 my-sm-0">Sign Out</Link>
-                </div>
+                <Link to="/signout" className="btn btn-primary my-2 my-sm-0 ml-auto">Sign Out</Link>
             )
         } else {
             return (
-                <div className="collapse navbar-collapse" id="navbarColor03">
-                    <ul className="navbar-nav mr-auto">
-                    </ul>
-                    <Link to="/signin" className="btn btn-primary my-2 my-sm-0">Sign In</Link>
-                </div>
+                <Link to="/signin" className="btn btn-primary my-2 my-sm-0 ml-auto">Sign In</Link>
             )
         }
     }
+
 
   render() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
                 <Link className="navbar-brand"to="/">myBrary</Link>
-                {this.renderLinks()}
+                <div className="collapse navbar-collapse" id="navbarColor03"> 
+                    {this.renderLinks()}
+                </div> 
             </div>
       </nav>
     );

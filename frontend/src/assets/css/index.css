@@ -1,0 +1,132 @@
+@import './reset.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+/*@import '~bootswatch/dist/lux/variables';
+@import '~bootstrap/scss/bootstrap';
+@import '~bootswatch/dist/lux/bootswatch';*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.custom-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px #ccc;
+  width: 400px;
+  padding: 20px;
+  margin: 100px auto;
+}
+
+.no-bottom-radius {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.no-top-radius {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.dropdown-menu {
+  display: block;
+}
+
+/* Books */
+
+.card-img {
+  width: auto;
+}
+
+.book-div {
+  position: relative;
+}
+
+.close-button {
+  background-color: gray;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 100;
+}
+
+.book-div .close-button {
+  display: none;
+}
+
+.book-div:hover .close-button {
+  display: block;
+}
+
+.book-title {
+  font-weight: bold;
+}
+
+.book-authors {
+  font-size: 0.8em;
+}
+
+.book-div img {
+  width: 80px;
+  margin: 0 20px;
+}
+
+.book-div .book-description {
+  display: none;
+}
+
+/* .book-div:hover .book-description {
+  display: block;
+} */
+
+.book-description {
+  position: absolute;
+  top: 0;
+  left: 200px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 10px;
+  z-index: 100;
+  width: 200px;
+}
+
+.create-list-button {
+  width: 100%;
+}
+
+
+/* Modal styles */
+
+.modal-container {
+  position: fixed;
+  top: 10%;
+  left: 35%;
+  z-index: 5000;
+  background-color: white;
+  box-sizing: border-box;
+  transition: all 0.5s ease-out;
+}
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+

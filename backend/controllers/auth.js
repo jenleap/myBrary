@@ -10,7 +10,7 @@ exports.register = (req, res) => {
             const newUser = new User({
                 username: req.body.username,
                 password: hash,
-                projects: []
+                books: []
             });
             newUser.save()
                 .then(

@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const auth = require('./routes/auth');
+const books = require('./routes/books');
+const lists = require('./routes/lists');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,6 +28,8 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/auth', auth);
+app.use('/api/books', books);
+app.use('/api/lists', lists);
 
 app.listen(PORT, () => {
     console.log(`Running on port ${PORT}...`)
