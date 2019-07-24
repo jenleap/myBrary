@@ -1,5 +1,6 @@
 @import './reset.css';
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Barriecito&display=swap');
 /*@import '~bootswatch/dist/lux/variables';
 @import '~bootstrap/scss/bootstrap';
 @import '~bootswatch/dist/lux/bootswatch';*/
@@ -8,10 +9,25 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Arial", sans-serif;
+  background-image: url('../img/books.jpg');
+  background-size: cover;
 }
 
 .hidden {
   display: none !important;
+}
+
+.navbar {
+  background-color: rgba(250, 250, 250, 0.3);
+}
+
+.myBrary-logo {
+  font-family: 'Barriecito', cursive;
+  font-size: 2em;
+}
+
+.background-fade {
+  background-image: radial-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0));
 }
 
 .custom-card {
@@ -21,6 +37,7 @@ body {
   width: 400px;
   padding: 20px;
   margin: 100px auto;
+  background-color: rgba(0, 0, 0, 0.5)
 }
 
 .no-bottom-radius {

@@ -63,7 +63,7 @@ class Dashboard extends Component {
             <div className="container row">
                 
                 <SideNav />
-                <div className="col-9">
+                <div className="col-9 bg-light">
                     {(this.props.reading.length > 0) ? (
                         <div className="">
                             <h5>Currently Reading</h5>
@@ -87,7 +87,7 @@ class Dashboard extends Component {
                     ) : null}
                     <div className="d-flex justify-content-between">
                         <h5>FULL LIBRARY</h5>
-                        <Link to="/search" className="btn btn-secondary mt-2 float-right">
+                        <Link to="/search" className="btn btn-dark mt-2 float-right">
                             Add Book
                             <i class="fas fa-plus ml-2"></i>
                         </Link>

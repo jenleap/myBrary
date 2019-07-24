@@ -17,7 +17,7 @@ class Signin extends Component {
 
         return(
             <form className="form-signin custom-card" onSubmit={ handleSubmit(this.onSubmit) }>
-                <h1 className="h3 mt-3 mb-3 font-weight-normal">Please sign in.</h1>
+                <h1 className="h3 mt-3 mb-3 font-weight-normal text-white">Please sign in.</h1>
 
                 <fieldset>
                     <label className="sr-only">Username</label>
@@ -43,8 +43,8 @@ class Signin extends Component {
                     />
                 </fieldset>
                 <div>{this.props.errorMessage}</div>
-                <button className="btn btn-lg btn-primary btn-block">Sign In</button>
-                <Link className="btn btn-link mt-3" to="/signup">Sign Up</Link>
+                <button className="btn btn-lg btn-light btn-block">Sign In</button>
+                <Link className="btn btn-link mt-3 text-white" to="/signup">Sign Up</Link>
             </form>
         )
     }
