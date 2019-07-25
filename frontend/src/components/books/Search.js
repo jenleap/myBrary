@@ -41,7 +41,7 @@ class Search extends Component {
                 <div className="">
                     <form className="form-inline mt-2" onSubmit={this.searchBooks.bind(this)}>
                         <input className="form-control mr-sm-2" type="text" placeholder="Search..." value={this.state.query} onChange={this.handleChange} />
-                        <button className="btn btn-dark my-2 my-sm-0" type="submit">
+                        <button className="btn btn-outline-light my-2 my-sm-0" type="submit">
                             <i className="fas fa-search" style={{color: 'white'}}></i>
                         </button>
                     </form>
@@ -50,11 +50,11 @@ class Search extends Component {
                     {(this.state.books.length < 1) ? (
                         <h4 className="text-white mt-4">No books found.</h4>
                     ) : (
-                        <div className="bg-light col-9 mt-3 p-3">
+                        <div className="bg-overlay col-9 mt-3 p-3">
                         {this.state.books.map(b => (
-                            <div className="">
+                            <div className="book-div">
                                 <Book b={b}>
-                                <button type="button" class="btn btn-outline-secondary btn-sm" onClick={() => this.addBook(b)}>Add to Library</button>
+                                <button type="button" class="btn btn-outline-light btn-sm" onClick={() => this.addBook(b)}>Add to Library</button>
                                 </Book>
                             </div>
                         ) 

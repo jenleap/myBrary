@@ -33,7 +33,7 @@ class SideNav extends Component {
                     <li className="list-group-item"><Link to={`/list/${l._id}`}>{l.name}</Link></li>
                 ))}
                 </ul>
-                <button to="/search" className="btn btn-dark mt-2 create-list-button" onClick={this.toggleModal}>
+                <button to="/search" className="btn btn-outline-light mt-2 create-list-button" onClick={this.toggleModal}>
                     Create List
                     <i class="fas fa-plus ml-2"></i>
                 </button>

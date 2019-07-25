@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { GET_LISTS, GET_LIST, CREATE_LIST, REMOVE_BOOK_FROM_LIST, RENAME_LIST, DELETE_LIST  } from './types';
 
+import { readBooks } from '../util/format';
+
 const url = 'http://localhost:5000/api/lists';
 
 
@@ -36,9 +38,13 @@ export const getList = (listId, token, callback) => dispatch => {
     axios.get(`${url}/${listId}`, config)
         .then((res) => {
            // console.log(res.data)
+           let formatted = {
+               ...res.data,
+               books: readBooks(res.data.books)
+           };
             dispatch({
                 type: GET_LIST,
-                payload: res.data
+                payload: formatted
             });
             callback(res.data);
         })

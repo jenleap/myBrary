@@ -19,7 +19,7 @@ class SettingsDropdown extends Component {
         return (
             <div className={`dropdown hoverPointer ${this.props.additionalStyles}`}>
                 <div className="" onClick={this.toggleOpen}>
-                    <i className={`fas fa-ellipsis-h fa-${this.props.size}x text-muted`}></i>
+                    <i className={`fas fa-ellipsis-h fa-${this.props.size}x text-white`}></i>
                 </div>
                 <div className="dropdown-menu"
                     style={{

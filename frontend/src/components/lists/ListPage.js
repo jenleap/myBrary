@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getList, removeBookFromList, renameList, deleteList } from '../../actions/lists';
 
+import SideNav from '../common/SideNav';
 import Book from '../books/Book';
 import Modal from '../common/Modal';
 import ConfirmDialog from '../common/ConfirmDialog';
@@ -21,6 +22,14 @@ class ListPage extends Component {
     componentWillMount() {
         const listId = this.props.match.params.listId;
         this.props.getList(listId, this.props.token, (list) => {
+            this.setState({ inputName: list.name });
+        });
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
+        console.log(nextProps.match.params.listId);
+        this.props.getList(nextProps.match.params.listId, this.props.token, (list) => {
             this.setState({ inputName: list.name });
         });
     }
@@ -63,7 +72,7 @@ class ListPage extends Component {
 
   render() {
     return (
-            <div className="container">
+            <div className="container row bg-overlay">
                 <Modal show={this.state.showDeleteList} >
                     <ConfirmDialog 
                         confirmMessage="Are you sure you want to delete this list?"
@@ -71,7 +80,9 @@ class ListPage extends Component {
                         cancelAction={this.toggleDeleteList}
                     />
                 </Modal>
-                <div class="d-flex justify-content-between">
+                <SideNav />
+                <div className="col-9 bg-overlay mt-4">
+                <div className="d-flex justify-content-between">
                     {(this.state.editName) ? (
                         <div className="input-group mb-3 mt-3">
                             <input type="text" className="form-control" value={this.state.inputName} onChange={this.handleChange} />
@@ -82,7 +93,7 @@ class ListPage extends Component {
                             </div>
                         </div>
                     ) : (
-                        <h1>{this.props.currentList.name}</h1>
+                        <h1 className="text-white">{this.props.currentList.name}</h1>
                     )}
                     
                     <SettingsDropdown 
@@ -114,14 +125,19 @@ class ListPage extends Component {
                                 <div className="close-button" onClick={this.toggleModal}>
                                     <i className="fas fa-times"></i>
                                 </div>
-                            <Book b={b}>    
-                                <button className="btn btn-outline-secondary col" onClick={() => this.onReadBook(b._id)}>Mark as Reading</button>  
+                            <Book b={b}>     
+                                {(b.currentlyReading) ? (
+                                    <span className="reading-tag">Currently Reading</span>
+                                ) : (
+                                    <button className="btn btn-outline-light col" onClick={() => this.onReadBook(b._id)}>Mark as Reading</button>
+                                )}
                             </Book>
                         </div>
                     ))
                 ) : (
                     <h1>No books in this list.</h1>
                 )}      
+            </div>
             </div>
     );
   }

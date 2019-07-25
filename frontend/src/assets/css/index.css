@@ -18,7 +18,7 @@ body {
 }
 
 .navbar {
-  background-color: rgba(250, 250, 250, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .myBrary-logo {
@@ -28,6 +28,12 @@ body {
 
 .background-fade {
   background-image: radial-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0));
+}
+
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  border-radius: 0.25em;
 }
 
 .custom-card {
@@ -119,6 +125,23 @@ body {
 
 .create-list-button {
   width: 100%;
+}
+
+.list-group-item, .card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid gray;
+}
+
+.list-group-item a {
+  color: white;
+}
+
+.reading-tag {
+  background-color: lightgray;
+  color: gray;
+  font-weight: bold;
+  border-radius: 0.25em;
+  padding: 8px;
 }
 
 

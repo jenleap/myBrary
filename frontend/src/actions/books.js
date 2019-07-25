@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { GET_BOOKS, ADD_BOOK, READ_BOOK, FINISH_BOOK, REMOVE_BOOK } from './types';
 
+import { readBooks } from '../util/format';
+
 const url = 'http://localhost:5000/api/books';
 
 
@@ -14,10 +16,14 @@ export const getBooks = (token) => dispatch => {
 
     axios.get(url, config)
         .then((res) => {
-            console.log(res.data.books)
+            //console.log(res.data.books)
+            let formattted = {
+                books: readBooks(res.data.books),
+                reading: readBooks(res.data.reading)
+            };
             dispatch({
                 type: GET_BOOKS,
-                payload: res.data
+                payload: formattted
             });
         })
         .catch((err) => {

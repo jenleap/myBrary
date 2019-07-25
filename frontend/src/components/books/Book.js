@@ -13,13 +13,13 @@ export default (props) => {
         </div> */
         <div className="card mb-3">
             <div className="row no-gutters">
-                <div className="col-md-3">
+                <div className="col-md-3 d-flex align-items-center">
                     <img src={props.b.cover} className="card-img" alt="..."/>
                 </div>
                 <div className="col-md-9">
                     <div className="card-body">
-                        <h5 className="card-title">{props.b.title}</h5>
-                        <p className="card-text">{props.b.authors}</p>
+                        <h5 className="card-title text-white">{props.b.title}</h5>
+                        <p className="card-text text-white">{props.b.authors}</p>
                         { props.children }
                     </div>
                 </div>

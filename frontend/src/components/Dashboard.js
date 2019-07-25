@@ -63,17 +63,17 @@ class Dashboard extends Component {
             <div className="container row">
                 
                 <SideNav />
-                <div className="col-9 bg-light">
+                <div className="col-9 mt-4">
                     {(this.props.reading.length > 0) ? (
-                        <div className="">
-                            <h5>Currently Reading</h5>
+                        <div className="bg-overlay p-3">
+                            <h5 className="text-white">Currently Reading</h5>
                             <hr />
                             <div className="d-flex">
                             {this.props.reading.map(b => (
                                 <div className="">
                                     <img src={b.cover} />
-                                    <div className="dropdown">
-                                        <div className="dropdown-toggle btn btn-outline-secondary w-100" onClick={this.toggleLists}>Update</div>
+                                    <div className="dropdown mt-1">
+                                        <div className="dropdown-toggle btn btn-outline-light w-100" onClick={this.toggleLists}>Update</div>
                                         <ul className="dropdown-menu hidden" id="d-menu">
                                             <li className="dropdown-item" onClick={() => this.onFinishBook(b._id, "finish")}>Finish</li>
                                             <li className="dropdown-item" onClick={() => this.onFinishBook(b._id, "DNF")}>DNF</li>
@@ -82,19 +82,17 @@ class Dashboard extends Component {
                                 </div>
                             ))}
                             </div>
-                            <hr />
                         </div>
                     ) : null}
-                    <div className="d-flex justify-content-between">
-                        <h5>FULL LIBRARY</h5>
-                        <Link to="/search" className="btn btn-dark mt-2 float-right">
-                            Add Book
-                            <i class="fas fa-plus ml-2"></i>
-                        </Link>
-                    </div>
+                    <div className="bg-overlay p-3 mt-3">
+                        <div className="d-flex justify-content-between mb-2">
+                            <h5 className="text-white">Full Library</h5>
+                            <Link to="/search" className="btn btn-dark float-right">
+                                Add Book
+                                <i class="fas fa-plus ml-2"></i>
+                            </Link>
+                        </div>
 
-                    <hr />
-                    
                     {(this.props.books.length > 0) ? (
                         this.props.books.map(b => (
                             <div className="book-div">
@@ -111,7 +109,7 @@ class Dashboard extends Component {
                                 <Book b={b}>
                                     <div className="row">
                                         <div className="dropdown col">
-                                            <div className="dropdown-toggle btn btn-outline-secondary" onClick={this.toggleLists}>Add to List...</div>
+                                            <div className="dropdown-toggle btn btn-outline-light" onClick={this.toggleLists}>Add to List...</div>
                                             <ul className="dropdown-menu hidden" id="d-menu">
                                                 {this.props.lists.map((l) => (
                                                     <li className="dropdown-item" onClick={() => this.onAddBooktoList(l._id, b._id)}>{l.name}</li>
@@ -119,9 +117,9 @@ class Dashboard extends Component {
                                             </ul>
                                         </div>
                                         {(b.currentlyReading) ? (
-                                            <span>Currently Reading</span>
+                                            <span className="reading-tag">Currently Reading</span>
                                         ) : (
-                                            <button className="btn btn-outline-secondary col" onClick={() => this.onReadBook(b._id)}>Mark as Reading</button>
+                                            <button className="btn btn-outline-light col" onClick={() => this.onReadBook(b._id)}>Mark as Reading</button>
                                         )}
                                         
                                     </div>
@@ -133,6 +131,7 @@ class Dashboard extends Component {
                     ) : (
                         <h2>No books added.</h2>
                     )}
+                    </div>
                 </div>
             </div>
             
