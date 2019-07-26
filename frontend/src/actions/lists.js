@@ -3,7 +3,7 @@ import { GET_LISTS, GET_LIST, CREATE_LIST, REMOVE_BOOK_FROM_LIST, RENAME_LIST, D
 
 import { readBooks } from '../util/format';
 
-const url = 'http://localhost:5000/api/lists';
+const url = 'http://localhost:5001/api/lists';
 
 
 export const getLists = (token) => dispatch => {

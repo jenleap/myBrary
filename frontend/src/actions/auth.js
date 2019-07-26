@@ -2,7 +2,7 @@ import axios from 'axios';
 import { AUTH_USER, AUTH_ERROR } from './types';
 
 export const signup = (formData, callback) => dispatch => {
-        axios.post('http://localhost:5000/api/auth/register', formData)
+        axios.post('http://localhost:5001/api/auth/register', formData)
             .then((res) => {
                 dispatch({
                     type: AUTH_USER,

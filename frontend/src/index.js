@@ -25,7 +25,7 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={ store }>
-        <BrowserRouter>
+        <BrowserRouter basename="/mybrary/">
             <App>
                 <Route path='/' exact component={ Main } />
                 <Route path='/signup' component={ Signup } />
