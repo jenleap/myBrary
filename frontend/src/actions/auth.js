@@ -2,7 +2,7 @@ import axios from 'axios';
 import { AUTH_USER, AUTH_ERROR } from './types';
 
 export const signup = (formData, callback) => dispatch => {
-        axios.post('http://localhost:5001/api/auth/register', formData)
+        axios.post('http://jenniferleap.com/mybrary-api/api/auth/register', formData)
             .then((res) => {
                 dispatch({
                     type: AUTH_USER,
@@ -28,7 +28,7 @@ export const signout = () => {
 };
 
 export const signin = (formData, callback) => dispatch => {
-    axios.post('http://localhost:5000/api/auth/login', formData)
+    axios.post('http://jenniferleap.com/mybrary-api/api/auth/login', formData)
         .then((res) => {
             dispatch({
                 type: AUTH_USER,

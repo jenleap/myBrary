@@ -31,6 +31,10 @@ app.use('/api/auth', auth);
 app.use('/api/books', books);
 app.use('/api/lists', lists);
 
+app.get('/', (req, res) => {
+    res.send("Hello World");
+});
+
 app.listen(PORT, () => {
     console.log(`Running on port ${PORT}...`)
 });
