@@ -5,12 +5,13 @@ import * as actions from '../../actions/auth';
 class Signout extends Component {
     componentDidMount() {
         this.props.signout();
+        setTimeout(() => this.props.history.push('/'), 2000);
     }
 
     render() {
         return (
         <div>
-            <h3 className="mt-5">You are now logged out.</h3>   
+            <h3 className="mt-5 text-white text-center">You are now logged out.</h3>   
         </div>
         )
     }

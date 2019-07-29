@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default () => {
     return(
-        <div className="mt-5 text-center background-fade">
+        <div className="mt-5 text-center">
             <h1 className="text-white">myBrary</h1>
             <p className="lead mb-5 text-white">Manage your books online.</p>
             <div className="text-center">

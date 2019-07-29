@@ -10,7 +10,8 @@ class Search extends Component {
 
     state = {
         query: '',
-        books: []
+        books: [],
+        message: ''
     }
 
     componentWillMount() {
@@ -25,6 +26,12 @@ class Search extends Component {
         e.preventDefault();
         searchBooksDb(this.state.query, (books) => {
             this.setState({ books });
+            if (books.length < 1) {
+                this.setState({ message: `No books found for ${this.state.query}`})
+            } else {
+                this.setState({ message: `Results for ${this.state.query}`})
+            }
+            this.setState({query: ""});
         });
 
     }
@@ -47,10 +54,9 @@ class Search extends Component {
                     </form>
                 </div>
                 <div>
-                    {(this.state.books.length < 1) ? (
-                        <h4 className="text-white mt-4">No books found.</h4>
-                    ) : (
-                        <div className="bg-overlay col-9 mt-3 p-3">
+                    <h4 className="text-white mt-4">{this.state.message}</h4>
+                    {(this.state.books.length > 0) ? (
+                        <div className="bg-overlay col-md-9 col-12 mt-3 p-3">
                         {this.state.books.map(b => (
                             <div className="book-div">
                                 <Book b={b}>
@@ -60,7 +66,7 @@ class Search extends Component {
                         ) 
                         )}
                         </div>
-                    )}
+                    ) : null}
                 </div>
             </div>
         )

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getList, removeBookFromList, renameList, deleteList } from '../../actions/lists';
+import { readBook } from '../../actions/books';
 
 import SideNav from '../common/SideNav';
 import Book from '../books/Book';
@@ -69,6 +70,10 @@ class ListPage extends Component {
         })
     }
 
+    onReadBook = (bookId) => {
+        this.props.readBook(bookId, this.props.token);
+    }
+
 
   render() {
     return (
@@ -81,7 +86,7 @@ class ListPage extends Component {
                     />
                 </Modal>
                 <SideNav />
-                <div className="col-9 bg-overlay mt-4">
+                <div className="col-12 col-md-9 bg-overlay mt-4">
                 <div className="d-flex justify-content-between">
                     {(this.state.editName) ? (
                         <div className="input-group mb-3 mt-3">
@@ -127,7 +132,7 @@ class ListPage extends Component {
                                 </div>
                             <Book b={b}>     
                                 {(b.currentlyReading) ? (
-                                    <span className="reading-tag">Currently Reading</span>
+                                    <span className="reading-tag col text-center">Currently Reading</span>
                                 ) : (
                                     <button className="btn btn-outline-light col" onClick={() => this.onReadBook(b._id)}>Mark as Reading</button>
                                 )}
@@ -135,7 +140,7 @@ class ListPage extends Component {
                         </div>
                     ))
                 ) : (
-                    <h1>No books in this list.</h1>
+                    <h4 className="text-white">No books in this list.</h4>
                 )}      
             </div>
             </div>
@@ -150,4 +155,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { getList, removeBookFromList, renameList, deleteList })(ListPage);
+export default connect(mapStateToProps, { getList, removeBookFromList, renameList, deleteList, readBook })(ListPage);

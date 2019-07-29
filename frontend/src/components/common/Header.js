@@ -21,7 +21,7 @@ class Header extends Component {
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container">
                 <Link className="navbar-brand myBrary-logo text-white" to="/">myBrary</Link>
-                <div className="collapse navbar-collapse" id="navbarColor03"> 
+                <div className=""> 
                     {this.renderLinks()}
                 </div> 
             </div>

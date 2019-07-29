@@ -63,15 +63,15 @@ class Dashboard extends Component {
             <div className="container row">
                 
                 <SideNav />
-                <div className="col-9 mt-4">
+                <div className="col-md-9 col-12 mt-4">
                     {(this.props.reading.length > 0) ? (
                         <div className="bg-overlay p-3">
                             <h5 className="text-white">Currently Reading</h5>
                             <hr />
                             <div className="d-flex">
                             {this.props.reading.map(b => (
-                                <div className="">
-                                    <img src={b.cover} />
+                                <div className="col-md-3 col-12">
+                                    <img className="w-100" src={b.cover} />
                                     <div className="dropdown mt-1">
                                         <div className="dropdown-toggle btn btn-outline-light w-100" onClick={this.toggleLists}>Update</div>
                                         <ul className="dropdown-menu hidden" id="d-menu">
@@ -88,8 +88,8 @@ class Dashboard extends Component {
                         <div className="d-flex justify-content-between mb-2">
                             <h5 className="text-white">Full Library</h5>
                             <Link to="/search" className="btn btn-dark float-right">
-                                Add Book
-                                <i class="fas fa-plus ml-2"></i>
+                                <span className="mobile-hide">Add Book</span>
+                                <i class="fas fa-plus ml-md-2"></i>
                             </Link>
                         </div>
 
@@ -117,9 +117,9 @@ class Dashboard extends Component {
                                             </ul>
                                         </div>
                                         {(b.currentlyReading) ? (
-                                            <span className="reading-tag">Currently Reading</span>
+                                            <span className="reading-tag col text-center">Currently Reading</span>
                                         ) : (
-                                            <button className="btn btn-outline-light col" onClick={() => this.onReadBook(b._id)}>Mark as Reading</button>
+                                            <button className="btn btn-outline-light col mt-md-0 mt-2" onClick={() => this.onReadBook(b._id)}>Mark as Reading</button>
                                         )}
                                         
                                     </div>
@@ -129,7 +129,7 @@ class Dashboard extends Component {
                             </div>
                         ))
                     ) : (
-                        <h2>No books added.</h2>
+                        <h4 className="text-white">No books added.</h4>
                     )}
                     </div>
                 </div>

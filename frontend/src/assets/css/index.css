@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Arial", sans-serif;
-  background-image: url('../img/books.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/books.jpg');
   background-size: cover;
 }
 
@@ -40,7 +40,7 @@ body {
   border: 1px solid #eee;
   border-radius: 10px;
   box-shadow: 0 2px 2px #ccc;
-  width: 400px;
+  max-width: 400px;
   padding: 20px;
   margin: 100px auto;
   background-color: rgba(0, 0, 0, 0.5)
@@ -165,6 +165,68 @@ body {
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mobile-show {
+  display: none;
+}
+
+.mobile-hide {
+  display: block;
+}
+
+.image-center {
+  margin: 0 auto;
+}
+
+/* Mobile styling */
+
+@media only screen and (max-width: 576px) {
+  .mobile-show {
+    display: block;
+  }
+
+  .mobile-hide {
+    display: none;
+  }
+
+  .container {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .form-control {
+    display: inline-block;
+    width: 80%;
+  }
+
+  .card {
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .book-div img {
+    margin: 0 auto;
+  }
+
+  .modal-container {
+    width: 90%;
+    left: 5%;
+  }
+
+  .modal-container .form-control {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
 }
 
 

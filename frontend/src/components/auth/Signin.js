@@ -16,7 +16,7 @@ class Signin extends Component {
         const { handleSubmit } = this.props;
 
         return(
-            <form className="form-signin custom-card" onSubmit={ handleSubmit(this.onSubmit) }>
+            <form className="form-signin custom-card col-sm-12" onSubmit={ handleSubmit(this.onSubmit) }>
                 <h1 className="h3 mt-3 mb-3 font-weight-normal text-white">Please sign in.</h1>
 
                 <fieldset>

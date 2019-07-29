@@ -25,8 +25,10 @@ class CreateList extends Component {
     return (
             <div className="container">
                 <input className="form-control mr-sm-2" type="text" placeholder="List name" value={this.state.input} onChange={this.handleChange} />
-                <button className="btn btn-outline-secondary my-2 my-sm-0" onClick={this.createList}>Create List</button>
-                <button className="btn btn-outline-secondary my-2 my-sm-0" onClick={this.props.closeModal}>Cancel</button>
+                <div className="d-flex justify-content-between mt-3">
+                    <button className="btn btn-secondary" onClick={this.createList}>Create List</button>
+                    <button className="btn btn-outline-secondary" onClick={this.props.closeModal}>Cancel</button>
+                </div>
             </div>
     );
   }

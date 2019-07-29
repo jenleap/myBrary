@@ -8,18 +8,31 @@ export const searchBooksDb = (query, callback) => {
         .then((results) => {
             let books = results.data.items.map((b) => {
                 //console.log(b.volumeInfo);
+                console.log(b);
                 let authorsList = "";
                 let description = "";
-                b.volumeInfo.authors.forEach(i => authorsList = authorsList + ", " + i);
-                authorsList = authorsList.slice(2, authorsList.length);
+                let cover = "";
+
+                if (b.volumeInfo.authors) {
+                    b.volumeInfo.authors.forEach(i => authorsList = authorsList + ", " + i);
+                    authorsList = authorsList.slice(2, authorsList.length);
+                } else {
+                    authorsList = "No author info"
+                }
+                
                 if (b.volumeInfo.description) {
                     description = b.volumeInfo.description;
                 }
                 let snippet = description.slice(0, 30).concat("...");
+
+                if (b.volumeInfo.imageLinks) {
+                    cover = b.volumeInfo.imageLinks.thumbnail;
+                }
+
                 return {
                     title: b.volumeInfo.title,
                     authors: authorsList,
-                    cover: b.volumeInfo.imageLinks.thumbnail,
+                    cover: cover,
                     description: description,
                     snippet: snippet
                 }

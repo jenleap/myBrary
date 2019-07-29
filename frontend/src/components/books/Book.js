@@ -14,7 +14,12 @@ export default (props) => {
         <div className="card mb-3">
             <div className="row no-gutters">
                 <div className="col-md-3 d-flex align-items-center">
-                    <img src={props.b.cover} className="card-img" alt="..."/>
+                    {(props.b.cover.length > 0) ? (
+                        <img src={props.b.cover} className="card-img" alt="..."/>
+                    ) : (
+                        <i className="fas fa-5x fa-book text-white image-center"></i>
+                    )}
+                    
                 </div>
                 <div className="col-md-9">
                     <div className="card-body">
